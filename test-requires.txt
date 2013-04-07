@@ -1,0 +1,4 @@
+nose
+pyhamcrest
+coverage
+pylint

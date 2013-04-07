@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>DHHR - Dek Hockey Haut-Richelieu</title>
+        <script src="static/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="static/mustache.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="main">Here goes the content of the page</div>
+        <div id="page1"><a href="#/page1">Page 1</a></div>
+        <div id="page2"><a href="#/page2">Page 2</a></div>
+    </body>
+
+    <script type="text/javascript">
+        function loadPageInMain(path) {
+            return function() {
+                $.get("templates/" + path + ".html", function(content) {
+                    $("#main").html(content);
+                });
+            }
+        }
+
+        (function() {
+            $("#page1").click(loadPageInMain("templates/page1.html"));
+            $("#page2").click(loadPageInMain("templates/page2.html"));
+        })();
+    </script>
+</html>

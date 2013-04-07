@@ -1,0 +1,8 @@
+.DS_Store
+target/
+.tox/
+.idea/
+*.pyc
+*.egg/
+*.egg-info/
+.coverage
