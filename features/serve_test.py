@@ -6,16 +6,16 @@ import requests
 
 class Serve(unittest.TestCase):
     def test_serves_homepage(self):
-        result = requests.get('http://localhost:8000/')
+        result = requests.get('http://localhost:5000/')
         assert_that(result.status_code, is_(200))
 
     def test_serves_javascript_libraries(self):
-        result = requests.get('http://localhost:8000/static/jquery-1.9.1.js')
+        result = requests.get('http://localhost:5000/static/jquery-1.9.1.js')
         assert_that(result.status_code, is_(200))
 
     @classmethod
     def setUpClass(cls):
-        cls._server = PicboisServer(port=8000)
+        cls._server = PicboisServer(port=5000)
         cls._server.start()
 
     @classmethod

@@ -5,8 +5,7 @@ from werkzeug.contrib.fixers import ProxyFix
 
 class WSGIServer(Application):
     def __init__(self):
-        super(WSGIServer, self).__init__(
-            "%prog [OPTIONS]")
+        super(WSGIServer, self).__init__("%prog [OPTIONS]")
 
     def init(self, parser, opts, args):
         pass
